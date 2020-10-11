@@ -65,6 +65,9 @@ export default {};
   background: #333;
   color: #fff;
   padding-bottom: 15px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .Footer .footer-text {

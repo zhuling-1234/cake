@@ -1,6 +1,6 @@
 <template>
   <div class="Card">
-    <img :src="image" alt="" />
+    <router-link  :to="{path:'/details',query:{id:id}}"><img :src="image" alt="" /></router-link>
     <div class="card-text">
       <h4>{{ title }}</h4>
       <p>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  props: ['title', 'price', 'danwei', 'account', 'image', 'id'],
+  props: ['title', 'price', 'danwei', 'account', 'image', 'id','link'],
   mounted() {
     //console.log(this.id);
   },

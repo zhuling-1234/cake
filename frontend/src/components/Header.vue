@@ -13,7 +13,7 @@
         <router-link to="/product/list">
           <i class="menu-class"></i><span>分类</span>
         </router-link>
-        <router-link to="/signin">
+        <router-link to="/me">
           <i class="menu-per"></i><span>个人</span>
         </router-link>
       </div>

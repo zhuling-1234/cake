@@ -2,6 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+import axios from 'axios';
 
 import {
   Grid,
@@ -43,16 +44,19 @@ Vue.use(Tabs);
 Vue.use(Overlay);
 Vue.use(Dialog);
 
+// 将axios对象强行添加到vue.prototype中
+Vue.prototype.$axios = axios.create({
+  baseURL: 'http://localhost:3000',
+});
+
 Vue.config.productionTip = false;
 
 Vue.prototype.$addToCart = function(id) {
-  console.log(this,this.productsId);
   let product = this.productsId.filter((item) => item.id === id);
-  let count = 0;
-  //debugger
-  if (product.length===0) {
+  let count = 1;
+  if (product.length === 0) {
     this.productsId.push({ id, count });
-  } 
+  }
 };
 new Vue({
   router,

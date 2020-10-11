@@ -47,6 +47,33 @@ export default {
         this.$toast('密码不能为空');
         return;
       }
+
+      this.$axios
+        .post('/login/signin', {
+          uname: this.username,
+          pwd: this.password,
+        })
+        .then((res) => {
+          // 在localStorage里存储或更新一条登陆记录
+                              //key       值
+          localStorage.setItem('auth', this.username);
+
+          this.$toast.success('登陆成功');
+          // 声明变量保存登陆之前的页面的地址
+          const redirect = this.$route.query.redirect;
+          // 判断redirect里是否有之前的页面地址
+          if(redirect){
+            // 如果有，登录后就跳转到之前的页面地址中
+            this.$router.push(redirect)
+          }else{
+            // 如果没有，就跳转到首页地址
+            this.$router.push('/')
+          };
+          
+        })
+        .catch((err) => {
+          this.$toast(err.response.data.msg);
+        });
     },
   },
 };

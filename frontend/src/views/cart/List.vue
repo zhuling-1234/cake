@@ -3,28 +3,25 @@
     <div class="content">
       <div class="cart-box">
         <router-link to="">
-          <img
-            src="//static.21cake.com/public/images/e3/41/5f/e46d582c2d65f2da50485f9fba7a01d1.jpg"
-            alt=""
-          />
+          <img :src="src" alt="" />
         </router-link>
         <div class="cart-title">
           <div>
             <h2>
-              <span>Croissant With Blueberry Jam</span>
-              <span>蓝莓丹麦（京沪杭满39元包邮）</span>
+              <span>{{ title }}</span>
+              <span>{{ pname }}</span>
             </h2>
           </div>
           <span>规格：66g(份)</span>
-          <span class="cart-price">￥27.60</span>
+          <span class="cart-price">￥{{ price }}</span>
         </div>
       </div>
       <div class="cart-number">
-        <i>
+        <i @click="$emit('jian', id)">
           <img src="//static.21cake.com//themes/wap/img/-.png" alt="" />
         </i>
-        <span>1</span>
-        <i>
+        <span>{{ productNumber }}</span>
+        <i @click="$emit('jia', id)">
           <img src="//static.21cake.com/themes/wap/img/+.png" alt="" />
         </i>
       </div>
@@ -34,7 +31,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['src', 'title', 'pname', 'price', 'id', 'productNumber'],
+  // data() {
+  //   return {
+  //     productNumber: 1,
+  //   };
+  // },
+  methods: {
+    jian() {
+      if (this.productNumber > 1) this.productNumber--;
+    },
+  },
+};
 </script>
 
 <style scoped>

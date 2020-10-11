@@ -36,9 +36,9 @@
 export default {
   data() {
     return {
-      username: '',
-      password: '',
-      password2: '',
+      username: '111',
+      password: '11111111',
+      password2: '11111111',
       checked: true,
     };
   },
@@ -67,6 +67,17 @@ export default {
         this.$toast('密码不一致');
         return;
       }
+      
+    // 执行post请求
+      this.$axios.post('/login/signup',{
+        uname:this.username,
+        pwd:this.password,
+      }).then((res) => {
+        this.$toast.success('注册成功');
+        this.$router.push('/signin');
+      }).catch((err) => {
+          this.$toast(err.response.data.msg);
+      })
     },
   },
 };

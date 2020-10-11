@@ -9,7 +9,7 @@
       <span>{{ price }}</span>
 
       <img
-        @click="$emit('cart-click')"
+        @click="$emit('cart-click', id)"
         class="cart"
         src="@/assets/index-icon/list-cart.png"
         alt=""
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  props: ['image', 'title', 'subtitle', 'price', 'mask',],
+  props: ['image', 'title', 'subtitle', 'price', 'mask', 'id'],
 };
 </script>
 

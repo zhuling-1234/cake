@@ -62,7 +62,7 @@
             <img class="content-image" :src="item.src" alt="" />
           </van-swipe-item>
           <van-swipe-item>
-            <router-link to=""
+            <router-link to="/more"
               ><h2 class="content-more">查看更多>>></h2></router-link
             >
           </van-swipe-item>
@@ -131,6 +131,7 @@ export default {
               danwei: '元/454g(1.0磅)',
               account: '树莓奶油与浆果慕斯蛋糕',
               src: require('@/assets/index-tuijian/tuijian-1.jpg'),
+              
             },
             {
               id: 2,
@@ -160,19 +161,56 @@ export default {
           recommends: [
             {
               id: 4,
-              title: '蓝莓丹麦',
+              title: '深爱',
               price: 198.0,
               danwei: '元/454g(1.0磅)',
-              account: '21cake[经典款面包持续供应]',
+              account: '你深爱过吗？',
               src: require('@/assets/index-tuijian/tuijian-4.jpg'),
             },
             {
               id: 5,
-              title: '蓝莓丹麦',
+              title: '米道',
               price: 198.0,
               danwei: '元/454g(1.0磅)',
-              account: '21cake[经典款面包持续供应]',
+              account: '天然天真，是这款蛋糕的唯一出发点',
               src: require('@/assets/index-tuijian/tuijian-5.jpg'),
+            },
+            {
+              id: 6,
+              title: '榴莲飘飘',
+              price: 1298.0,
+              danwei: '元/454g(1.0磅)',
+              account: '严格捍卫榴莲狂热者的权利',
+              src: require('@/assets/index-tuijian/tuijian-6.jpg'),
+            },
+          ],
+        },
+         {
+          title: '生日',
+          recommends: [
+            {
+              id: 7,
+              title: '朗姆芝士',
+              price: 198.0,
+              danwei: '元/454g(1.0磅)',
+              account: '你深爱过吗？',
+              src: require('@/assets/index-tuijian/tuijian-7.jpg'),
+            },
+            {
+              id: 8,
+              title: '百香果酸乳慕斯',
+              price: 198.0,
+              danwei: '元/454g(1.0磅)',
+              account: '天然天真，是这款蛋糕的唯一出发点',
+              src: require('@/assets/index-tuijian/tuijian-8.jpg'),
+            },
+            {
+              id: 9,
+              title: '比尔德（HBD）',
+              price: 1298.0,
+              danwei: '元/454g(1.0磅)',
+              account: '严格捍卫榴莲狂热者的权利',
+              src: require('@/assets/index-tuijian/tuijian-9.jpg'),
             },
           ],
         },
